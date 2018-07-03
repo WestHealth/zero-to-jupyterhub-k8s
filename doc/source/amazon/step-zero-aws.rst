@@ -231,14 +231,14 @@ Then perform the following steps:
 
 3. Patch Weave with the password:
 
-    .. code-block:: bash
+      .. code-block:: bash
            
         kubectl patch --namespace=kube-system daemonset/weave-net --type json -p '[ { "op": "add", "path": "/spec/template/spec/containers/0/env/0", "value": { "name": "WEAVE_PASSWORD", "valueFrom": { "secretKeyRef": { "key": "weave-passwd", "name": "weave-passwd" } } } } ]'
 
 
-If you want to remove the encryption you can use the following patch:
+    If you want to remove the encryption you can use the following patch:
 
-     .. code-block:: bash
+      .. code-block:: bash
            
         kubectl patch --namespace=kube-system daemonset/weave-net --type json -p '[ { "op": "remove", "path": "/spec/template/spec/containers/0/env/0"} ]'
     
@@ -246,10 +246,9 @@ If you want to remove the encryption you can use the following patch:
 
 5. You can verify encryption is turned on with the following command:
 
-    .. code-block:: bash
+       .. code-block:: bash
     
         kubectl exec -n kube-system weave-net-<pod> -c weave -- /home/weave/weave --local status
-        
 
     You should see `encryption: enabled`
     
