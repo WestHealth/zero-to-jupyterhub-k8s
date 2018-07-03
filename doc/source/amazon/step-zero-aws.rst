@@ -218,7 +218,7 @@ Then perform the following steps:
            
         kubectl --namespace kube-system get pods
 
-    You should see several pods of the form `weave-net-abcde`
+You should see several pods of the form `weave-net-abcde`
 
 2.  Create Kubernetes secret with a private password of sufficient strength. A random 128 bytes is used in this example:
 
@@ -236,7 +236,7 @@ Then perform the following steps:
         kubectl patch --namespace=kube-system daemonset/weave-net --type json -p '[ { "op": "add", "path": "/spec/template/spec/containers/0/env/0", "value": { "name": "WEAVE_PASSWORD", "valueFrom": { "secretKeyRef": { "key": "weave-passwd", "name": "weave-passwd" } } } } ]'
 
 
-	If you want to remove the encryption you can use the following patch:
+If you want to remove the encryption you can use the following patch:
 
      .. code-block:: bash
            
