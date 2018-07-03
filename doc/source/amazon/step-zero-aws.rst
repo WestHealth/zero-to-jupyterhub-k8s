@@ -214,11 +214,11 @@ Then perform the following steps:
 
 1. Verify weave is running:
 
-        .. code-block:: bash
+   .. code-block:: bash
             
-	   kubectl --namespace kube-system get pods
+      kubectl --namespace kube-system get pods
 
-    You should see several pods of the form `weave-net-abcde`
+   You should see several pods of the form `weave-net-abcde`
 
 2.  Create Kubernetes secret with a private password of sufficient strength. A random 128 bytes is used in this example:
 
