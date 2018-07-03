@@ -197,7 +197,7 @@ Instead of performing step 13 above. Create the following ``storageclass.yml`` f
 
 The main difference is the addition of the line `encrypted: "true"` and make note that `true` is in double quotes.
 
-Next run these commands:
+    Next run these commands:
        
         .. code-block:: bash
            
