@@ -214,11 +214,11 @@ Then perform the following steps:
 
 1. Verify weave is running:
 
-    .. code-block:: bash
-           
-        kubectl --namespace kube-system get pods
+        .. code-block:: bash
+            
+	   kubectl --namespace kube-system get pods
 
-You should see several pods of the form `weave-net-abcde`
+    You should see several pods of the form `weave-net-abcde`
 
 2.  Create Kubernetes secret with a private password of sufficient strength. A random 128 bytes is used in this example:
 
@@ -250,6 +250,7 @@ If you want to remove the encryption you can use the following patch:
     
         kubectl exec -n kube-system weave-net-<pod> -c weave -- /home/weave/weave --local status
         
+
     You should see `encryption: enabled`
     
     If you really want to insure encryption is working, you can listen on port `6783` of any node. If the traffic looks like gibberish, you know it is on.
