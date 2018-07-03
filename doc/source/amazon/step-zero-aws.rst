@@ -197,7 +197,7 @@ Instead of performing step 13 above. Create the following ``storageclass.yml`` f
 
 The main difference is the addition of the line `encrypted: "true"` and make note that `true` is in double quotes.
 
-Next run these commands::
+Next run these commands:
        
         .. code-block:: bash
            
@@ -240,7 +240,7 @@ Then perform the following steps:
 
      .. code-block:: bash
            
-        kubectl patch --namespace=kube-system daemonset/weave-net --type json -p '[ { "op": "add", "path": "/spec/template/spec/containers/0/env/0", "value": { "name": "WEAVE_PASSWORD", "valueFrom": { "secretKeyRef": { "key"\ : "weave-passwd", "name": "weave-passwd" } } } } ]'
+        kubectl patch --namespace=kube-system daemonset/weave-net --type json -p '[ { "op": "remove", "path": "/spec/template/spec/containers/0/env/0"} ]'
     
 4. Check to see that the pods are restarted. To expedite the process you can delete the old pods.
 
